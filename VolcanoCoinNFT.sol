@@ -47,7 +47,7 @@ contract VolcanoCoinNFT is ERC721, Ownable {
     
    function withdrawFunds() external onlyOwner {
        uint256 balance = address(this).balance;
-       require(balance > 0, "No ether left to withdraw");
+       require(balance > 0, "Nothing left to withdraw");
        (bool success, ) = (msg.sender).call{value: balance} ("");
        require(success, "Withdraw Failed");
        emit Withdraw(msg.sender, balance);
