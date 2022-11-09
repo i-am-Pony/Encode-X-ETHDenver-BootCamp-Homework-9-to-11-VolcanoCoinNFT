@@ -13,7 +13,7 @@ contract VolcanoCoinNFT is ERC721, Ownable {
 
      uint256 public constant MAX_SUPPLY = 13;
      uint256 public constant ETHCOST = 0.01 ether;
-     uint256 public constant VOLCCOST = 100;
+     uint256 public constant VOLCCOST = 100 VOLC;
      string constant TOKEN_URI ="ipfs://QmQFotx3S1LeMXLDfXNwzBkQc4yGK7hpDVJG1Q2uTH6Lw2";
 
     constructor() ERC721("Volcano Coin NFT", "VCNFT") {}
