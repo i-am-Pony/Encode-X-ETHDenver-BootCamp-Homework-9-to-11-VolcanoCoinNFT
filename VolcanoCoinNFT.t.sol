@@ -60,4 +60,16 @@ contract VolcanoCoinNFTTest is Test {
    assertEq(owner.balance, 0.69 ether);
  }
 
+  function _testWithdrawFromOwner() public {
+   vm.startPrank(bob);
+   vm.deal(bob, 150);
+   volcanoCoinNFT.mint{value: 100}();
+   assertEq(volcanoCoinNFT.balanceOf(bob), 1);
+   vm.stopPrank();
+
+   vm.startPrank(owner);
+   volcanoCoinNFT.withdrawFunds();
+   assertEq(owner.balance, 100);
+ }
+
 }
