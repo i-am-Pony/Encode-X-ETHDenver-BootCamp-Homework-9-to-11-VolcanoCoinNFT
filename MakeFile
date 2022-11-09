@@ -1,0 +1,26 @@
+-include .env
+
+all: clean remove install update solc build
+
+solc:; nix-env -f https://github.com/dapphub/dapptools/archive/master.tar.gz -iA solc-static-versions.solc_0_8_10
+
+clean  :; forge clean
+
+remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
+
+install :; 
+	forge install dapphub/ds-test 
+	forge install OpenZeppelin/openzeppelin-contracts
+
+update:; forge update
+
+build  :; forge clean && forge build --optimize --optimize-runs 1000000
+
+setup-yarn:
+        yarn
+
+local-node: setup-yarn
+	    yarn hardhat node
+
+deploy:
+		forge create VolcanoCoinNFT --private-key ${PRIVATE_KEY}
