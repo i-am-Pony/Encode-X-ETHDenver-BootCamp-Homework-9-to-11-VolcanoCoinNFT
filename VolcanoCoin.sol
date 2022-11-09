@@ -12,6 +12,7 @@ contract VolcanoCoin is ERC20, Ownable {
         }
 
     uint256 _totalSupply = 10000;
+    uint256 VOLC = _totalSupply;
 
     struct Payment {
         uint256 transferToken;
