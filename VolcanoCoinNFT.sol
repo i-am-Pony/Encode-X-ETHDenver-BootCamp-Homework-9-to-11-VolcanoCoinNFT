@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "../src/VolcanoCoin.sol";
+import "./VolcanoCoin.sol";
 
 contract VolcanoCoinNFT is ERC721, Ownable {
     using Counters for Counters.Counter;
@@ -13,7 +13,7 @@ contract VolcanoCoinNFT is ERC721, Ownable {
 
      uint256 public constant MAX_SUPPLY = 13;
      uint256 public constant ETHCOST = 0.01 ether;
-     uint256 public constant VOLCCOST = 100 VOLC;
+     uint256 public constant VOLCCOST = 100;
      string constant TOKEN_URI ="ipfs://QmQFotx3S1LeMXLDfXNwzBkQc4yGK7hpDVJG1Q2uTH6Lw2";
 
     constructor() ERC721("Volcano Coin NFT", "VCNFT") {}
