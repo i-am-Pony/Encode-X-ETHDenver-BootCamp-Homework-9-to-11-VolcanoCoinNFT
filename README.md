@@ -14,7 +14,9 @@ Homework day 9
   
   
 Homework day 10
-  
+Review the security notes from Lesson 7, make sure you understand the re entrancy
+exploit.
+
   
 Homework day 11 
 1. Add fuction that allows user to mint NFT with 0.01 ETH, or VolcanoCoin (You set price)
